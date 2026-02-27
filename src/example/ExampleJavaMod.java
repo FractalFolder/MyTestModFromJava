@@ -15,22 +15,23 @@ import static mindustry.Vars.*;
 public class ExampleJavaMod extends Mod{
 
     public ExampleJavaMod(){
-        Log.info("Loaded ExampleJavaMod constructor.");
-    
-    @Override
-    public void loadContent(){
-        // Здесь ты создавал предметы
     }
 
-    // Этот метод добавляет кнопку в главное меню
+    @Override
+    public void loadContent(){
+        // Метод для создания предметов
+    }
+
     @Override
     public void init(){
-        // Находим контейнер главного меню
+        // Добавляем кнопку в главное меню
         ui.menuGroup.fill(t -> {
-            t.bottom().right(); // Ставим кнопку вниз направо
+            t.bottom().right(); // Размещаем кнопку внизу справа
             t.button("Мой Мод", () -> {
                 ui.showInfo("Кнопка работает!");
-            }).size(150, 50); // Задаем размер
+            }).size(150, 50); // Размер кнопки
         });
     }
-} // !!! ВАЖНО: Эта скобка закрывает класс ExampleJavaMod
+}
+
+  
