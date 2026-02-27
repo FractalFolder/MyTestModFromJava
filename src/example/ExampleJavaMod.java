@@ -41,16 +41,14 @@ public class ExampleJavaMod extends Mod{
             explosiveness = 0.5f; // Он немного взрывоопасен!
             flammability = 0.1f;
         }};
-    }
-    
+
     @Override
     public void init(){
-        // Добавляем кнопку в главное меню
-        ui.menuGroup.fill(t -> {
-            t.bottom().right(); // Размещаем кнопку внизу справа
-            t.button("Моя Кнопка", () -> {
-                // Действие при нажатии кнопки
-                ui.showInfo("Привет! Это кнопка из моего мода.");
-            }).size(150, 50); // Размер кнопки
-        });
+    // Находим контейнер главного меню
+    ui.menuGroup.fill(t -> {
+        t.bottom().right(); // Ставим кнопку       вниз направо
+        t.button("Мой Мод", () -> {
+            ui.showInfo("Кнопка работает!");
+        }).size(150, 50); // Задаем размер
+    });
 }
