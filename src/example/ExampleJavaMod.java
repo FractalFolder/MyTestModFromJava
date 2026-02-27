@@ -30,7 +30,15 @@ public class ExampleJavaMod extends Mod{
 
     @Override
     public void loadContent(){
-        Log.info("Loading some example content.");
+        // Создаем новый предмет "Кристалл Пустоты"
+        new Item("void-crystal") {{
+            localizedName = "Кристалл Пустоты";
+            description = "Очень редкий и нестабильный ресурс.";
+            color = Color.valueOf("8e44ad"); // Фиолетовый цвет
+            explosiveness = 0.5f; // Он немного взрывоопасен!
+            flammability = 0.1f;
+        }};
     }
+
 
 }
