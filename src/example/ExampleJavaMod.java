@@ -8,6 +8,9 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
+import arc.scene.ui.*;
+import arc.scene.ui.layout.*;
+import static mindustry.Vars.*;
 
 public class ExampleJavaMod extends Mod{
 
@@ -39,6 +42,15 @@ public class ExampleJavaMod extends Mod{
             flammability = 0.1f;
         }};
     }
-
-
+    
+    @Override
+    public void init(){
+        // Добавляем кнопку в главное меню
+        ui.menuGroup.fill(t -> {
+            t.bottom().right(); // Размещаем кнопку внизу справа
+            t.button("Моя Кнопка", () -> {
+                // Действие при нажатии кнопки
+                ui.showInfo("Привет! Это кнопка из моего мода.");
+            }).size(150, 50); // Размер кнопки
+        });
 }
