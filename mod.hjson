@@ -4,5 +4,5 @@ author: FractalFolder
 main: example.ExampleJavaMod
 description: текст
 version: 0.1
-minGameVersion: 146
+minGameVersion: 155.4
 java: true
